@@ -1,8 +1,10 @@
 import React, { FC } from "react";
 import { Pagination } from "swiper";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { getDummyImage } from "utils/product";
+import { getDummyImage, getDummyImage2 } from "utils/product";
 import { Box } from "zmp-ui";
+
+const images = ['https://benhvienthammykangnam.vn/wp-content/uploads/2023/03/benh-vien-tham-my-kangnam.jpg','https://doanhnghiepvathuongmai.vn/public/storage/uploads/images/QA/t11.2022/h1%20(2).jpg']
 
 export const Banner: FC = () => {
   return (
@@ -16,8 +18,8 @@ export const Banner: FC = () => {
         loop
         cssMode
       >
-        {[1, 2, 3, 4, 5]
-          .map((i) => getDummyImage(`banner-${i}.jpg`))
+        { images
+          .map((i) => getDummyImage2(`${i}`))
           .map((banner, i) => (
             <SwiperSlide key={i} className="px-4">
               <Box
